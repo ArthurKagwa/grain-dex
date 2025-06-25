@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import "@openzeppelin/contracts/token/ERC1155/ERC1155.sol";
+import "../node_modules/openzeppelin/contracts/token/ERC1155/ERC1155.sol";
 
 /**
  * @title WarehouseReceipt
@@ -13,11 +13,11 @@ contract WarehouseReceipt is ERC1155 {
     /// @notice incrementing token id counter
     uint256 public lastId;
 
-    /**
-     * @param baseURI Pattern for token URI; expects `{id}` substitution.
-     *               Example: "ipfs://{id}.json" – the dApp can pin a
-     *               JSON file whose `image` field matches `photoCID`.
-     */
+    // /**
+    //  * @param baseURI Pattern for token URI; expects `{id}` substitution.
+    //  *               Example: "ipfs://{id}.json" – the dApp can pin a
+    //  *               JSON file whose `image` field matches `photoCID`.
+    //  */
     constructor() ERC1155("ipfs://{id}.json") {}
 
     /**
